@@ -22,9 +22,11 @@ openssl genrsa -out jean.key 2048
 Создайте запрос на подпись сертификата (certificate signing request, CSR). CN — имя пользователя, O — группа. Можно устанавливать разрешения по группам. Это упростит работу, если, например, у вас много пользователей с одинаковыми полномочиями:
 
 # Без группы
+```bash
 openssl req -new -key jean.key \
 -out jean.csr \
 -subj "/CN=jean"
+```
 
 # С группой под названием $group
 openssl req -new -key jean.key \
